@@ -1,1 +1,126 @@
-/* Add your CSS here */
+/* style.css */
+
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Header / Hero Section */
+header {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(to right, #0071c5, #0056b3); /* Intel blue gradient */
+  border-radius: 8px;
+  margin-bottom: 40px;
+  color: white; /* Ensure text contrasts well */
+}
+
+header img {
+  width: 160px;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.1rem;
+  color: #e0e0e0; /* Lighter gray for readability */
+}
+
+/* Timeline Section */
+section {
+  display: flex;
+  overflow-x: auto; /* Horizontal scroll on large screens */
+  gap: 20px;
+  scroll-snap-type: x mandatory; /* LevelUp: smooth scroll snapping */
+  padding-bottom: 20px;
+}
+
+section div {
+  flex: 0 0 300px; /* Each card fixed width for scrolling */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  scroll-snap-align: start;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+section div img {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+/* Hover effect (interactivity) */
+section div:hover {
+  transform: translateY(-8px) scale(1.03); /* LevelUp: CSS transform */
+  box-shadow: 0 6px 15px rgba(0, 86, 179, 0.3); /* Subtle Intel-blue glow */
+  border-color: #0056b3;
+}
+
+/* Hide card descriptions (all <p> inside timeline cards) */
+section div p {
+  display: none;     /* hidden by default */
+  margin-top: 10px;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Reveal text only when hovering over the card */
+section div:hover p {
+  display: block;
+}
+/* Headings inside cards */
+section h2 {
+  font-size: 1.5rem;
+  color: #0056b3;
+}
+
+section h3 {
+  font-size: 1.2rem;
+  margin: 5px 0;
+  color: #333;
+}
+
+section p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Small note at bottom */
+body > p {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Responsive design: stack cards vertically on small screens */
+@media (max-width: 768px) {
+  section {
+    flex-direction: column;
+    overflow-x: visible;
+  }
+
+  section div {
+    flex: 1 1 auto;
+  }
+}
+/* End of style.css */
